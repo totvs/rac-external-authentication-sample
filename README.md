@@ -1,7 +1,5 @@
 # rac-external-authentication-sample
 [![Build Status][travis-image]][travis-url] 
-[travis-image]:https://travis-ci.org/totvs/rac-external-authentication-sample.svg?branch=master
-[travis-url]:https://travis-ci.org/totvs/rac-external-authentication-sample
 
 Código para demonstrando a implementação de um ERP para realizar a autenticação externa do RAC.
 
@@ -35,3 +33,5 @@ Get User Id
 
 **Url:** http://localhost:4987/rest/v1/users/id/test
 
+[travis-image]:https://travis-ci.org/totvs/rac-external-authentication-sample.svg?branch=master
+[travis-url]:https://travis-ci.org/totvs/rac-external-authentication-sample
