@@ -19,12 +19,19 @@ Para testar a aplicação pelo swagger ou via postman:
 
 Validate
 ---
+
 **Method:** Post
+
 **Url:** http://localhost:4987/rest/v1/users/validate
+
 **Body:** username=test&password=test@123
+
 **Header:** Content-Type text/plain
 
 Get User Id
 ---
+
 **Method:** Get
+
 **Url:** http://localhost:4987/rest/v1/users/id/test
+
