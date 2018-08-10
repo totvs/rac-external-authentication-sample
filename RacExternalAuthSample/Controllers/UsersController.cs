@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.IO;
 using System.Text;
 
@@ -10,7 +9,9 @@ namespace RacExternalAuthSample.Controllers
   [AllowAnonymous]
   public class UsersController : Controller
   {
-
+    /// <summary>
+    /// Usuário de exemplo para validação
+    /// </summary>
     readonly dynamic user = new
     {
       Id = "1001",
@@ -34,18 +35,17 @@ namespace RacExternalAuthSample.Controllers
     /// </summary>
     /// <returns>Retorna true se as credenciais foram validadas pelo ERP</returns>
     [HttpPost("validate")]
-    public bool Validate() =>
-      new Func<bool>(() =>
-        {
-          using (StreamReader reader = new StreamReader(this.HttpContext.Request.Body, Encoding.UTF8))
-          {
-            string[] dataParsed = reader.ReadToEnd().Split('&');
+    public bool Validate()
+    {
+      using (StreamReader reader = new StreamReader(this.HttpContext.Request.Body, Encoding.UTF8))
+      {
+        string[] dataParsed = reader.ReadToEnd().Split('&');
 
-            string username = dataParsed[0].Split('=')[1];
-            string password = dataParsed[1].Split('=')[1];
+        string username = dataParsed[0].Split('=')[1];
+        string password = dataParsed[1].Split('=')[1];
 
-            return username == user.Name && password == user.Password;
-          }
-        })();
+        return username == user.Name && password == user.Password;
+      }
+    }
   }
 }
