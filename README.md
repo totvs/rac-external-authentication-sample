@@ -1,4 +1,4 @@
-# rac-external-authentication-sample
+# RacExternalAuthenticationSample
 [![Build Status][travis-image]][travis-url] 
 
 Código para demonstrando a implementação de um ERP para realizar a autenticação externa do RAC.
@@ -12,26 +12,42 @@ Código para demonstrando a implementação de um ERP para realizar a autentica�
 Em seguida, ao acessar a tela de login do RAC o sistema irá utilizar essa aplicação para autenticar o usuário
 Informe o usuário **test** e senha **test@123** e o login será realizado com sucesso.
 
-Para testar a aplicação pelo swagger ou via postman:
+Request e response da aplicação:
 ===
 
 Validate
 ---
 
+***Request***
+
 **Method:** Post
 
 **Url:** http://localhost:4987/rest/v1/users/validate
 
+**Header:** Content-Type: text/plain
+
 **Body:** username=test&password=test@123
 
-**Header:** Content-Type text/plain
+***Response***
+
+**Header:** Content-Type: text/plain
+
+**Body:** true (Informando se as credenciais são válidas)
 
 Get User Id
 ---
 
+***Request***
+
 **Method:** Get
 
 **Url:** http://localhost:4987/rest/v1/users/id/test
+
+***Response***
+
+**Header:** Content-Type: text/plain
+
+**Body:** 1001 (Representa o id do usuário nesse código exemplo)
 
 [travis-image]:https://travis-ci.org/totvs/rac-external-authentication-sample.svg?branch=master
 [travis-url]:https://travis-ci.org/totvs/rac-external-authentication-sample
