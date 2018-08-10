@@ -1,7 +1,7 @@
 # RacExternalAuthenticationSample
 [![Build Status][travis-image]][travis-url] 
 
-Código para demonstrando a implementação de um ERP para realizar a autenticação externa do RAC.
+Código demonstrando a implementação de um ERP para realizar a autenticação externa do RAC.
 
 É necessário incluir algumas configurações no RAC
 * **TnfExternalAuthentication.GetValidateCredentialAddress** com o valor **http://localhost:4987/rest/v1/users/validate**
@@ -9,7 +9,7 @@ Código para demonstrando a implementação de um ERP para realizar a autentica�
 * **TnfExternalAuthentication.SourceName** com o valor **ERP**
 * **TnfExternalAuthentication.GetUserInfoAddress** com o valor **http://localhost:4987/rest/v1/users**
 
-Em seguida, ao acessar a tela de login do RAC o sistema irá utilizar essa aplicação para autenticar o usuário
+Em seguida, ao acessar a tela de login do RAC o sistema irá utilizar essa aplicação para autenticar o usuário.
 Informe o usuário **test** e senha **test@123** e o login será realizado com sucesso.
 
 Request e response da aplicação:
